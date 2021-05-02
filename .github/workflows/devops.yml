@@ -26,5 +26,5 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-      - name: yarn start
-        run: yarn start
+      - name: yarn test
+        run: yarn test

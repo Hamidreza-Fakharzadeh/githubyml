@@ -24,6 +24,9 @@ jobs:
           # deploy to Azure Web App.
           yarn install
           yarn build 
+      - name: add process.json
+        run: |
+         echo '{ script: "serve", env: { PM2_SERVE_SPA: "true", PM2_SERVE_HOMEPAGE: "/index.html" } }' >> build/process.json
       - name: "Deploy to Azure WebApp"
         uses: azure/webapps-deploy@v1
         with:
